@@ -1,0 +1,40 @@
+Task 1 : 
+
+1)  LOAD DATA INFILE "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/FareTable.csv" INTO TABLE PES1UG20CS490_fare COLUMNS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '"' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+
+    select * from PES1UG20CS490_train_user;
+
+2)  select * from PES1UG20CS490_route_info where distance>=70 and distance<=150;
+
+3)  select * from PES1UG20CS490_route_info where (from_station_name="Chennai" and to_station_name="Sholingur") or (from_station_name="Sholingur" and to_station_name="Chennai");
+
+4)  select * from PES1UG20CS490_train where train_type !="Mail";
+
+5)  select train_name from PES1UG20CS490_train where source="Bengaluru" and destination="Chennai";
+
+6)  SELECT train_no,train_name,departure,departure_time FROM Train NATURAL JOIN Ticket WHERE departure="Chennai" AND departure_time>"8:00:00";
+
+7)  SELECT * FROM Train_user WHERE dob >= "1980-01-01" AND dob < "1990-01-01";
+
+8)  SELECT user_id,firstname,lastname from Train_user WHERE dob >= "1980-01-01" AND dob < "1990-01-01";
+
+9)  SELECT user_id,firstname,lastname from Train_user WHERE LEFT(firstname, 1)='S';
+
+10) SELECT availability FROM Compartment WHERE compartment_type="I Class" AND train_number=62621;
+
+11) SELECT pnr, transaction_no FROM Payment_info WHERE bank="UNION BANK";
+
+
+Task 2 :
+
+1) create user varunSH@localhost identified by '696969';
+
+   grant update, delete on table PES1UG20CS_compartment to varunSH@localhost;
+
+2) revoke update, delete on PES1UG20CS490_train from varunSH@localhost;
+
+3) savepoint M69;
+   savepoint M70;
+   rollback savepoint M69;
+
+

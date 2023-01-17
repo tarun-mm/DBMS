@@ -1,0 +1,6 @@
+The columns
+	'Price' in Payment-Info &
+	'Age' in Train-User 
+are filled with NULL values on purpose.
+
+Filling up these columns is left as an exercise to the students in Labs 4 and 5.
